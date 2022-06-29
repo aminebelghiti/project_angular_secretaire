@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Ajouter RDV
+        </div>
+
+        <div class="card-body">
+            <form [formGroup]="addRdvFormGroup" (ngSubmit)="saveRdv()" >
+
+
+                <div class="row ">
+                    <div class="col">
+
+                        <div class="mb-3" >
+                        <div class="btn-group  btn-lg">
+                            <label>Patient ID</label>
+                            <input type="text" readonly type="text" class="form-control" formControlName="patient_id" value="{{data.patient_id}}">
+                        </div>
+
+
+                                <div class="btn-group  ">
+                                    <label>Motif</label>
+                                    <input type="text" class="form-control" formControlName="motif" >
+                                </div>
+
+                            <div class="btn-group  ">
+                                <label>acte</label>
+                                <input type="text" class="form-control" formControlName="acte" >
+                            </div>
+
+                            <div class="btn-group  ">
+                                <label>etat</label>
+                                <input type="text" class="form-control" formControlName="etat" >
+                            </div>
+
+
+                   
+
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3" >
+                            <label class="form-label"></label>
+                            <input type="date" formControlName="date" class="form-control" >
+
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Heure :</label>
+                            <input type="time" step="1" formControlName="heure" class="form-control" required>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+                <button class="btn btn-success">Enregistrer</button>
+            </form>
+        </div>
+
+    </div>
+</div>

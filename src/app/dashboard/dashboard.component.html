@@ -1,0 +1,130 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card card-chart">
+                  <div class="card-header card-header-info">
+                      Calendrier
+                  </div>
+                  <div class="card-body">
+
+                      <full-calendar [options]="calendarOptions"></full-calendar>
+                  </div>
+
+              </div>
+          </div>
+
+
+          <div class="col-md-4 ">
+
+              <div class="row">
+
+                  <div class="col-md-10 ">
+                      <div class="card text-center">
+                          <div class="card-header card-header-info">
+                              Liste d'attente
+                          </div>
+                          <div class="card-body">
+                              <h3 class="card-title"> 7
+                                  <small>Patients</small>
+                              </h3>
+                          </div>
+                        </div>
+                  </div>
+
+                  <div class="col-md-10 ">
+                      <div class="card text-center">
+                          <div class="card-header card-header-info">
+                              Rendez-Vous d'aujourd'hui
+                          </div>
+                          <div class="card-body">
+                              <h3 class="card-title"> 8
+                                  <small>Patients</small>
+                              </h3>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-10 ">
+                      <div class="card text-center">
+                          <div class="card-header card-header-info">
+                              Consultés
+                          </div>
+                          <div class="card-body">
+                              <h3 class="card-title"> 5
+                                  <small>Patients</small>
+                              </h3>
+                          </div>
+                      </div>
+                  </div>
+
+
+
+
+
+                  <div class="col-md-6  ">
+                      <button class="btn btn-success " mat-raised-button (click)="AjouterRDV()">
+                          Ajouter RDV
+                      </button>
+                  </div>
+
+
+
+
+
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+
+          <div class="col-lg-12 col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-info">
+                      <h4 class="card-title">Demandes de RDV</h4>
+
+                  </div>
+                  <div class="card-body table-responsive">
+                      <table class="table table-hover">
+                          <thead class="text-primary">
+                              <th>ID</th>
+                              <th>Patient</th>
+                              <th>Motif</th>
+                              <th>Heure</th>
+                              <th>Date</th>
+                              <th>Patient</th>
+                          </thead>
+                          <tbody>
+                          <tr  *ngFor="let p of listeDemandes">
+                              <td>{{p.id}}</td>
+
+                              <td>{{p.motif}}</td>
+                              <td>{{p.heure}}</td>
+                              <td>{{p.date |  date: 'yyyy-MM-dd'}}</td>
+                              <td>{{p.patient.nom}} {{p.patient.prenom}}</td>
+
+
+                              <td>
+                                  <button mat-icon-button color="primary" >
+                                      <mat-icon>edit_calendar</mat-icon>
+                                  </button>
+                              </td>
+
+                              <td>
+                                  <button mat-icon-button color="primary" >
+                                      <mat-icon>more_time</mat-icon>
+                                  </button>
+                              </td>
+
+
+
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
